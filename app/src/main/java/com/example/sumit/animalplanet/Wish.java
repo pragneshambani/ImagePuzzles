@@ -38,6 +38,7 @@ public class Wish extends AppCompatActivity {
     private void populateAnimalList(){
         animalImageNames.add("camel");
         animalImageNames.add("deer");
+        animalImageNames.add("lion");
     }
 
     @Override
