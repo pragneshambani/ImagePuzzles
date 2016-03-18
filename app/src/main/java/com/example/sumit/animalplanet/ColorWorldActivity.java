@@ -1,6 +1,7 @@
 package com.example.sumit.animalplanet;
 
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -43,5 +44,10 @@ public class ColorWorldActivity extends AppCompatActivity {
         findViewById(R.id.startView).setBackgroundColor(color);
         ((TextView)findViewById(R.id.starColorName)).setText(colorSchemes.get(colorIndex).name);
         colorIndex++;
+
+
+        int resID=getResources().getIdentifier(colorSchemes.get(colorIndex).name.toLowerCase(), "raw", getPackageName());
+        MediaPlayer mediaPlayer=MediaPlayer.create(this,resID);
+        mediaPlayer.start();
     }
 }

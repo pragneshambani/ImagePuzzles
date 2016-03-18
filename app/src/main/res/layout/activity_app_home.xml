@@ -21,11 +21,27 @@
         android:textStyle="bold"/>
 
     <TextView
+        android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/BLACK"
         android:layout_below="@id/pageTitle"
         android:layout_marginTop="1dp"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/pageTitle"
+        android:layout_alignBottom="@+id/pageTitle"
+        android:layout_alignRight="@+id/divider"
+        android:layout_marginLeft="300dp"
+        android:layout_marginBottom="2dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/settings"
+        android:foregroundGravity="bottom"
+        android:onClick="showSettings"
         />
     <Button
         android:id="@+id/toAPGameButton"
