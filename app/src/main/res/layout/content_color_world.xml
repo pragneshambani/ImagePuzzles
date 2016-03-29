@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -11,29 +11,161 @@
     android:background="@color/WHITE"
     tools:showIn="@layout/activity_color_world">
 
-    <ImageView
-        android:id="@+id/startView"
+    <RelativeLayout
+        android:id="@+id/ColorPicker"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="100dp">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/colorBlack"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/BLACK"
+            app:cardPreventCornerOverlap="false"
+            app:contentPadding="0dp"
+            android:tag="black"
+            android:onClick="colorImage"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/colorRed"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/colorBlack"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/RED"
+            app:cardPreventCornerOverlap="false"
+            app:contentPadding="0dp"
+            android:tag="red"
+            android:onClick="colorImage"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/colorBlue"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/BLUE"
+            app:cardPreventCornerOverlap="false"
+            app:contentPadding="0dp"
+            android:layout_toRightOf="@+id/colorRed"
+            android:tag="blue"
+            android:onClick="colorImage"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/colorYellow"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/colorBlue"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/YELLOW"
+            app:cardPreventCornerOverlap="false"
+            app:contentPadding="0dp"
+            android:tag="yellow"
+            android:onClick="colorImage"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/colorGreen"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/colorYellow"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/GREEN"
+            app:cardPreventCornerOverlap="false"
+            app:contentPadding="0dp"
+            android:tag="green"
+            android:onClick="colorImage"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/Preview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:layout_alignParentTop="true"
-        android:background="@color/BLACK"
-        android:foregroundGravity="center_horizontal"
-        android:src="@drawable/star"
-        android:onClick="changeMyColor"
-    />
+        android:layout_below="@+id/ColorPicker"
+        android:layout_above="@+id/ImagePicker">
 
+        <ImageView
+            android:id="@+id/startView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/teddy_bear"
+            android:background="@color/GREEN"
+            />
 
-    <TextView
-        android:id="@+id/starColorName"
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ImagePicker"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_alignParentBottom="true"
-        android:text="BLACK"
-        android:gravity="center"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        android:background="@color/WHITE"
-        />
+        >
+
+        <ImageView
+            android:id="@+id/imgTeddy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:src="@mipmap/teddy_bear"
+            android:tag="teddyBear"
+            android:background="@color/WHITE"
+            android:onClick="changeMyImage"
+            />
+
+        <ImageView
+            android:id="@+id/imgCycle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/cycle"
+            android:tag="cycle"
+            android:background="@color/WHITE"
+            android:onClick="changeMyImage"
+            />
+
+        <ImageView
+            android:id="@+id/imgTeddy2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/teddy_bear"
+            android:tag="teddyBear"
+            android:background="@color/WHITE"
+            android:onClick="changeMyImage"
+            />
+
+    </RelativeLayout>
+
+
+
 
 </RelativeLayout>
