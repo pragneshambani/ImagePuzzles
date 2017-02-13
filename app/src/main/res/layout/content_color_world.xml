@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -11,10 +10,20 @@
     android:background="@color/WHITE"
     tools:showIn="@layout/activity_color_world">
 
-    <RelativeLayout
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/color_picker__view"
+        android:scrollbars="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/BLUE"
+        android:nestedScrollingEnabled="true"
+        />
+
+<!--    <LinearLayout
         android:id="@+id/ColorPicker"
         android:layout_width="match_parent"
         android:gravity="center_horizontal"
+        android:layoutDirection="ltr"
         android:layout_height="100dp">
 
         <android.support.v7.widget.CardView
@@ -93,7 +102,7 @@
             android:tag="green"
             android:onClick="colorImage"/>
 
-    </RelativeLayout>
+    </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/Preview"
@@ -157,8 +166,8 @@
             android:adjustViewBounds="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@mipmap/teddy_bear"
-            android:tag="teddyBear"
+            android:src="@mipmap/teddy_bear2"
+            android:tag="teddyBear2"
             android:background="@color/WHITE"
             android:onClick="changeMyImage"
             />
@@ -167,5 +176,5 @@
 
 
 
-
+-->
 </RelativeLayout>
